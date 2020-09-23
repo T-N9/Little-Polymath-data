@@ -1,0 +1,152 @@
+$('.modal').css( {
+    'display': 'block',
+    'position': 'fixed', 
+    'z-index': '1',
+    'padding-top': '100px',
+    'left': '0',
+    'top': '0',
+    'width': '100%', 
+    'height': '100%', 
+    'overflow': 'auto',
+    'background-color': 'rgb(0,0,0)', 
+    'background-color': 'rgba(0,0,0,0.4)'
+  });
+$('.modal-content').css( {
+    'background-colo'r: '#fefefe',
+    'margin': 'auto',
+    'padding': '20px',
+    'border': '1px solid #888',
+    'width': '80%'
+     });
+$('.close').css( {
+    'color': '#aaaaaa',
+    'float': 'righ',
+    'font-size': '28px',
+    'font-weight': 'bold'
+  });
+  
+  $('.close').hover(function(){
+$(this).css('color': '#000',
+    'text-decoration': 'none',
+    'cursor': 'pointer')
+});
+  $('.close').focus(function(){
+$(this).css('color': '#000',
+    'text-decoration': 'none',
+    'cursor': 'pointer')
+});
+
+#btn1 {
+    background-color:#E0E5EC;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 9px 9px 16px rgba(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+    color: #4D3252;
+    font-weight: 700;
+    height: 96px;
+    margin-bottom: 48px;
+    margin-right: 48px;
+    overflow: hidden;
+    position: relative;
+    text-transform: uppercase;
+    width: 96px;
+  }
+  
+  #btn1:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right, 
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+  }
+  
+  #btn1:hover:after {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition-property: transform, opacity;
+    transition-duration: 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  
+  #btn1:active:after {
+    opacity: 0;
+  }
+$('#btn1').active(function(){
+	$('#btn1').css({
+	'background':'green',
+	'color':'white'
+});
+});
+$('#btn1').active(function(){
+	$('#btn1').css({
+	'background':'red',
+	'color':'white'
+});
+});
+$( "#btn" ).click(function() {
+  $( '#btn' ).animate({ "color": "green" }, "slow" );
+
+$('.modal-content').css( {
+                        'background-color': '#e5edf2',
+                        'margin': 'auto',
+                        'padding': '20px',
+                        'border': '6px solid rgb(30,170,203)',
+                        'width': '50%',
+                        'border-radius':'10px'
+                         });
+$('.modal-content').css( {
+                        'background-color': '#e5edf2',
+                        'margin': 'auto',
+                        'padding': '20px',
+                        'border': '6px solid rgb(246,79,89)',
+                        'width': '50%',
+                        'border-radius':'10px'
+                         });
+$('.modal-content').css( {
+                        'background-color': '#e5edf2',
+                        'margin': 'auto',
+                        'padding': '20px',
+                        'border': '6px solid  #f7b733',
+                        'width': '50%',
+                        'border-radius':'10px'
+                         });
+$myArray=array();
+        for ($i=0; $i<=10; $i++) {
+            $num[$i] = mt_rand(1,29);
+            for ($j=0; $j<$i; $j++) {             
+                while ($num[$j] == $num[$i]){               
+                    $num[$i] = mt_rand(1,29);               
+                    $j = 0;             
+                }           
+            } 
+            array_push($myArray,$num[$i]);  
+        } 
+        // sort($myArray);
+        // print_r($myArray);
+
+<div id="in_sec">
+  <h4 id="que">Question : </h4><h4 id=loop_num>.$que_n.</h4>
+  <div id=countdown>20 s</div><br><br>
+    <div id=que_cq><h3 id=cate_plc>.$row['category'].
+                </h3><p id=ques_plc>.$row['question'].</p><br>.
+                <div id=btn_spc><button name=submit type=sumbit class=btn id=btn1>.$row['op_one'].</button>.<br><br>.
+                <button name=submit type=sumbit class=btn id=btn2>.$row['op_two'].</button>.<br><br>.
+                <button name=submit type=sumbit class=btn id=btn3>.$row['op_three'].</button>.<br><br>.
+                <button name=submit type=sumbit class=btn id=btn4>.$row['op_four'].</button>
+  </div>
+</div>
+<br>;

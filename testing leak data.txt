@@ -1,0 +1,197 @@
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span><br>
+        <p id="expl_t">
+        သင့်အဖြေမှန်ကန်ပါသည်။<br>သင် အမှတ် ၁၀၀ ရရှိပါသည်။<br>
+            <?php
+                $sql="SELECT * FROM lpquestions WHERE QID=$suffnum;";
+                $result=mysqli_query($conn,$sql);
+                $resultCheck=mysqli_num_rows($result);
+                if($resultCheck>0){
+                    
+                    while($row=mysqli_fetch_assoc($result) and $x <=10){
+                        echo $row['expl_a'];
+                       
+                    }
+                }
+            ?>
+        </p>
+        <p id="expl_f">
+        သင့်အဖြေမှားယွင်းပါသည်။<br>အဖြေမှန်မှာ
+        <?php
+                $sql="SELECT * FROM lpquestions WHERE QID=$suffnum;";
+                $result=mysqli_query($conn,$sql);
+                $resultCheck=mysqli_num_rows($result);
+                if($resultCheck>0){
+                    
+                    while($row=mysqli_fetch_assoc($result) and $x <=10){
+                        echo $row['answer'];
+                       
+                    }
+                }
+            ?>ဖြစ်ပါသည်။
+        </p>
+        <p id="expl1">
+            <?php
+                $sql="SELECT * FROM lpquestions WHERE QID=$suffnum;";
+                $result=mysqli_query($conn,$sql);
+                $resultCheck=mysqli_num_rows($result);
+                if($resultCheck>0){
+                    
+                    while($row=mysqli_fetch_assoc($result) and $x <=10){
+                        echo $row['expl_a'];
+                       
+                    }
+                }
+            ?>
+        </p>
+    </div>
+</div> 
+
+/*button conditions front end example
+၊
+၊       no use
+၊________________________________________________*/
+$('#btn1').click(function() {
+    var a1=$("#btn1").html();
+    var a2=$("#ans_a").html();
+    var a3=$("#expl").html();
+    if(a1==a2){
+        $('#expl_t').css({'display':'block'});
+        $('#expl_f').css({'display':'none'});
+        $('#expl1').css({'display':'none'});
+        $('.modal').css({'display':'block'});
+        
+    }
+    else{
+        $('#expl_f').css({'display':'block'});
+        $('#expl_t').css({'display':'none'});
+        $('#expl1').css({'display':'block'});
+        $('.modal').css({'display':'block'});
+        
+    }  
+})
+$('#btn2').click(function() {
+    var a1=$("#btn2").html();
+    var a2=$("#ans_a").html();
+    if(a1==a2){
+        $('#expl_t').css({'display':'block'});
+        $('#expl_f').css({'display':'none'});
+        $('#expl1').css({'display':'none'});
+        $('.modal').css({'display':'block'});
+    }
+    else{
+        $('#expl_f').css({'display':'block'});
+        $('#expl_t').css({'display':'none'});
+        $('#expl1').css({'display':'block'});
+        $('.modal').css({'display':'block'});
+    }   
+})
+$('#btn3').click(function() {
+    var a1=$("#btn3").html();
+    var a2=$("#ans_a").html();
+    if(a1==a2){
+        $('#expl_t').css({'display':'block'});
+        $('#expl_f').css({'display':'none'});
+        $('#expl1').css({'display':'none'});
+        $('.modal').css({'display':'block'});
+    }
+    else{
+        $('#expl_f').css({'display':'block'});
+        $('#expl_t').css({'display':'none'});
+        $('#expl1').css({'display':'block'});
+        $('.modal').css({'display':'block'});
+    }   
+})
+$('#btn4').click(function() {
+    var a1=$("#btn4").html();
+    var a2=$("#ans_a").html();
+    if(a1==a2){
+        $('#expl_t').css({'display':'block'});
+        $('#expl_f').css({'display':'none'});
+        $('#expl1').css({'display':'none'});
+        $('.modal').css({'display':'block'});
+    }
+    else{
+        $('#expl_f').css({'display':'block'});
+        $('#expl_t').css({'display':'none'});
+        $('#expl1').css({'display':'block'});
+        $('.modal').css({'display':'block'});
+    }   
+})
+/*button conditions front end example
+၊
+၊  no use
+၊________________________________________________*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #expl_ans{
+    display: none;
+  }
+
+echo "<h4 id=loop_num>".$x."</h4>".$row['category']."<br><h3>".$row['question']."</h3><br>".
+
+ <form method=post id=myform><a href=question.php><button name=continue type=submit id=continue>Continue</button></a></form>
+
+  <form method="post" id="myform">
+        <a href="question.php"><button name="continue" type="submit" id="continue">Continue</button></a>
+    </form>
+
+    var data= JSON.parse(this.responseText);
+
+    $dbServername="sql101.byetcluster.com";
+    $dbUsername="epiz_25835902";
+    $dbPassword="HwVvx3LvTq";
+    $dbName="epiz_25835902_lpdatabase";

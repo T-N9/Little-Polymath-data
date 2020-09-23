@@ -1,0 +1,26 @@
+<div id="in_sec">
+  <h4 id="que">Question : </h4><h4 id=loop_num><?php echo $que_n; ?></h4>
+  <div id=countdown>20 s</div><br><br>
+    <div id=que_cq><h3 id=cate_plc><?php echo $row['category']; ?></h3>
+    	<p id=ques_plc><?php echo $row['question']; ?></p>
+    </div><br>
+                <div id=btn_spc>
+                	<button name=submit type=sumbit class=btn id=btn1>
+                		<?php echo $row['op_one']; ?>	
+                	</button><br><br>
+                	<button name=submit type=sumbit class=btn id=btn2>
+                		<?php echo $row['op_two']; ?>
+                	</button><br><br>
+                	<button name=submit type=sumbit class=btn id=btn3>
+                	<?php echo $row['op_three']; ?>
+                	</button><br><br>
+                	<button name=submit type=sumbit class=btn id=btn4>
+                	<?php echo $row['op_four']; ?>
+                	</button>
+  				</div>
+</div>
+<br>;
+<?php echo $row['op_one']; ?>
+<?php echo"$que_n"; ?>
+<?php echo"$que_n"; ?>
+<?php echo"$que_n"; ?>
